@@ -11,7 +11,7 @@ public class BookDetailServices {
     @Autowired
     private BookDetailRepository bookDetailepository;
 
-    public Book saveReview(Book review) {
-        return bookDetailepository.save(review);
+    public Book saveBook(Book book) {
+        return bookDetailepository.save(book);
     }
 }
