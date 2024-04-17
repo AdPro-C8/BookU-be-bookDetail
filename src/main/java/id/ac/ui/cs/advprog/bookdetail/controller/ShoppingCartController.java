@@ -14,15 +14,9 @@ public class ShoppingCartController {
     @Autowired
     private ShoppingCart shoppingCart;
 
-    @PostMapping("/cart/items")
+    @PostMapping("/cart/books")
     public ResponseEntity<Void> addItemToCart(@RequestBody Book book) {
         shoppingCart.addBook(book);
-        return ResponseEntity.ok().build();
-    }
-
-    @DeleteMapping("/cart/items/{title}")
-    public ResponseEntity<Void> removeItemFromCart(@PathVariable String title) {
-        shoppingCart.removeBookByTitle(title);
         return ResponseEntity.ok().build();
     }
 }
