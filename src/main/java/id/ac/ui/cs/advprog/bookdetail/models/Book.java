@@ -1,11 +1,15 @@
-package id.ac.ui.cs.advprog.admin.models;
+package id.ac.ui.cs.advprog.bookdetail.models;
 
+import id.ac.ui.cs.advprog.bookdetail.models.BookBuilder;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Entity
+@Table(name = "book", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"title", "author"})
+})
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,7 +17,7 @@ public class Book {
     @Getter
     private Long id;
 
-    @Column(unique = true)
+    @Column(nullable = false)
     @Getter
     @Setter
     private String title;
@@ -48,4 +52,9 @@ public class Book {
     @Getter
     @Setter
     private String fotoCover;
+
+    public static BookBuilder builder() {
+        return new BookBuilder();
+    }
 }
+

@@ -1,6 +1,6 @@
 package id.ac.ui.cs.advprog.bookdetail.models;
 
-import id.ac.ui.cs.advprog.admin.models.Book;
+import id.ac.ui.cs.advprog.bookdetail.models.Book;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
